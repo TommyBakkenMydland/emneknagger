@@ -36,7 +36,12 @@ class ItemFilter extends Component {
             onResolveSuggestions={this.onFilterChangedName}
             onRenderSuggestionsItem={this.renderSuggestionItem}
             itemLimit={5}
-            
+            componentRef="Yes"
+            inputProps={{
+              onBlur: () => console.log('onBlur called'),
+              onFocus: () => console.log('onFocus called'),
+              'aria-label': 'Tag Picker'
+            }}
             pickerSuggestionsProps={{
               suggestionsHeaderText: 'Suggested Tags',
               noResultsFoundText: 'No Tags found, click here to save tag'
